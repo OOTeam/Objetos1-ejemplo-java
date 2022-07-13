@@ -9,11 +9,23 @@ public class Golondrina {
 
     public void comer(Integer unaCantidadDeGramos) {
         // energia := energia + (unaCantidadDeGramos * 4 "joules").
-        energia = energia + (unaCantidadDeGramos * 4);
+        energia = energia + energiaRecuperadaPorComer(unaCantidadDeGramos);
+    }
+
+    private Integer energiaRecuperadaPorComer(Integer unaCantidadDeGramos) {
+        return unaCantidadDeGramos * 4;
     }
 
     public void volar(Integer unosKilometros) {
         // energia := energia - (unosKilometros + 10 "joules de costo fijo").
-        energia = energia - (unosKilometros + 10);
+        energia = energia - energiaDisminuidaPorVolar(unosKilometros);
+    }
+
+    private Integer energiaDisminuidaPorVolar(Integer unosKilometros) {
+        return unosKilometros + costoFijoPorVolar();
+    }
+
+    private Integer costoFijoPorVolar() {
+        return 10;
     }
 }
