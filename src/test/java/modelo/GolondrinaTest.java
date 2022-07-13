@@ -13,7 +13,8 @@ public class GolondrinaTest {
     private Golondrina pepita;
     private String buenosAires;
 
-    @BeforeEach // corre antes de cada test el setUp.
+    @BeforeEach
+        // corre antes de cada test el setUp.
     void setUp() {
         //buenosAires := 'Buenos Aires'.
         buenosAires = "Buenos Aires";
@@ -22,13 +23,13 @@ public class GolondrinaTest {
     }
 
     @Test
-    public void unaGolondrinaNaceCon45JoulesDeEnergia(){
+    public void unaGolondrinaNaceCon45JoulesDeEnergia() {
         Assertions.assertEquals(ENERGIA_INICIAL_DE_LAS_GOLONDRINAS, pepita.energia());
         // Assert that: pepita energia isEqualTo: 45 "joules".
     }
 
     @Test
-    public void unaGolondrinaNaceEnUnaUbicacion(){
+    public void unaGolondrinaNaceEnUnaUbicacion() {
         pepita = new Golondrina(buenosAires);
 
         Assertions.assertEquals(buenosAires, pepita.ubicacion());
@@ -36,7 +37,7 @@ public class GolondrinaTest {
     }
 
     @Test
-    public void unaGolondrinaComeUnaCantidadDeGramosPorLoQueAumentaSuEnergia(){
+    public void unaGolondrinaComeUnaCantidadDeGramosPorLoQueAumentaSuEnergia() {
         Integer unaCantidadDeGramos = 1;
 
         pepita.comer(unaCantidadDeGramos);
@@ -47,7 +48,7 @@ public class GolondrinaTest {
     }
 
     @Test
-    public void unaGolondrinaVuelaUnosKilometrosPorLoQueGastaEnergia(){
+    public void unaGolondrinaVuelaUnosKilometrosPorLoQueGastaEnergia() {
         Integer unosKilometros = 1;
 
         pepita.volar(unosKilometros);
@@ -55,5 +56,21 @@ public class GolondrinaTest {
         Integer energiaEsperada = 34;
         Assertions.assertEquals(energiaEsperada, pepita.energia());
         // Assert that: pepita energia isEqualTo: 34 "joules".
+    }
+
+    @Test
+    public void unaGolondrinaConPocaEnergiaEstaDebil() {
+        Assertions.assertTrue(pepita.estaDebil());
+        // Assert isTrue: pepita estaDebil.
+    }
+
+    @Test
+    public void unaGolondrinaConMuchaEnergiaEstaDebil() {
+        Integer unaCantidadDeGramos = 100;
+
+        pepita.comer(unaCantidadDeGramos);
+
+        Assertions.assertFalse(pepita.estaDebil());
+        // Assert isFalse: pepita estaDebil.
     }
 }
