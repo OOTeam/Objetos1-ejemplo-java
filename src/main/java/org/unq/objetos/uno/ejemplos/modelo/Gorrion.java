@@ -23,4 +23,12 @@ public class Gorrion {
     public String ubicacion() {
         return ubicacion;
     }
+
+    public void volar(Integer unosKilometros) {
+        energia = energia - energiaDisminuidaPorVolar(unosKilometros);
+    }
+
+    private Integer energiaDisminuidaPorVolar(Integer unosKilometros) {
+        return unosKilometros * 5;
+    }
 }

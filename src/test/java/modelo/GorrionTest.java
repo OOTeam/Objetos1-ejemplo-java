@@ -40,4 +40,15 @@ public class GorrionTest {
         Assertions.assertEquals(energiaEsperada, pepon.energia());
         // Assert that: pepon energia isEqualTo: 122 "joules".
     }
+
+    @Test
+    public void unGorrionVuelaUnosKilometrosPorLoQueGastaEnergia() {
+        Integer unosKilometros = 2;
+
+        pepon.volar(unosKilometros);
+
+        Integer energiaEsperada = ENERGIA_INICIAL_DE_LOS_GORRIONES - 10;
+        Assertions.assertEquals(energiaEsperada, pepon.energia());
+        // Assert that: pepon energia isEqualTo: 90 "joules".
+    }
 }
