@@ -2,6 +2,11 @@ package org.unq.objetos.uno.ejemplos.modelo;
 
 public class Golondrina {
     private Integer energia = 45;
+    private String ubicacion;
+
+    public Golondrina(String unaUbicacion) {
+        this.ubicacion = unaUbicacion;
+    }
 
     public Integer energia() {
         return energia;
@@ -27,5 +32,9 @@ public class Golondrina {
 
     private Integer costoFijoPorVolar() {
         return 10;
+    }
+
+    public String ubicacion() {
+        return ubicacion;
     }
 }
