@@ -54,7 +54,7 @@ public class ColeccionesEjemploTest {
                 .mapToInt((Golondrina golondrina) -> golondrina.energia())
                 .sum();
 
-        Assertions.assertEquals(90, energiaTotal);
+        Assertions.assertEquals(490, energiaTotal);
     }
 
     @Test

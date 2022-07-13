@@ -1,14 +1,14 @@
 package org.unq.objetos.uno.ejemplos.golondrinas;
 
-public class Golondrina {
+public class Golondrina extends Ave {
 
 
-    private Integer energia = 45;
-
-    public Integer energia() {
-        return energia;
+    public Golondrina() {
+        this.energia = 45;
     }
 
+
+    @Override
     public void volar(Integer unaDistanciaEnKilometros) {
         // energia := energia - (unaDistanciaEnKilometros / kilometer * joule  + self costoFijo)
         energia = energia - energiaResultanteTrasVolar(unaDistanciaEnKilometros);
@@ -18,17 +18,15 @@ public class Golondrina {
         return unaDistanciaEnKilometros + 10;
     }
 
-    public void comer(Integer unaCantidadDeAlimentoEnGramos) {
-        // energia := energia + (unaCantidadDeAlimentoEnGramos / gram * 4 * joule).
-        energia = energia + energiaResultanteTrasComer(unaCantidadDeAlimentoEnGramos);
-    }
 
-    private int energiaResultanteTrasComer(Integer unaCantidadDeAlimentoEnGramos) {
+    @Override
+    protected Integer energiaResultanteTrasComer(Integer unaCantidadDeAlimentoEnGramos) {
         return unaCantidadDeAlimentoEnGramos * 4;
     }
 
-
-    public boolean estaDebil() {
-        return energia < 50;
+    @Override
+    protected Integer limiteDeDebilidad() {
+        return 50;
     }
+
 }

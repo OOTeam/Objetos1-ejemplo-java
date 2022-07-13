@@ -40,4 +40,13 @@ public class GolondrinaTest {
 
         Assertions.assertEquals(energiaEsperada, pepita.energia());
     }
+
+
+    @Test
+    public void unaGolondrinaEstaDebil() {
+        pepita.volar(1);
+
+        Assertions.assertTrue(pepita.estaDebil());
+    }
+
 }
