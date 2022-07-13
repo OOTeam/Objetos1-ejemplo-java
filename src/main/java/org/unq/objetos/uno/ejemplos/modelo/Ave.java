@@ -17,9 +17,14 @@ public abstract class Ave {
         return ubicacion;
     }
 
+    protected abstract Integer energiaRecuperadaPorComer(Integer unaCantidadDeGramos);
+
     public abstract void volar(Integer unaDistanciaEnKilometros);
 
-    public abstract void comer(Integer unaCantidadDeAlimentoEnGramos);
+    public void comer(Integer unaCantidadDeGramos) {
+        // energia := energia + (unaCantidadDeGramos * 4 "joules").
+        this.energia = energia + energiaRecuperadaPorComer(unaCantidadDeGramos);
+    }
 
     public boolean estaDebil() {
         return energia() < limiteCuandoEstaDebil();

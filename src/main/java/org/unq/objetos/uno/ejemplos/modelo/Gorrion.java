@@ -8,11 +8,7 @@ public class Gorrion extends Ave {
     }
 
     @Override
-    public void comer(Integer unaCantidadDeAlimentoEnGramos) {
-        energia += energiaRecuperadaPorComer(unaCantidadDeAlimentoEnGramos);
-    }
-
-    private Integer energiaRecuperadaPorComer(Integer unaCantidadDeAlimentoEnGramos) {
+    protected Integer energiaRecuperadaPorComer(Integer unaCantidadDeAlimentoEnGramos) {
         return unaCantidadDeAlimentoEnGramos + unaCantidadDeAlimentoEnGramos * 10;
     }
 
