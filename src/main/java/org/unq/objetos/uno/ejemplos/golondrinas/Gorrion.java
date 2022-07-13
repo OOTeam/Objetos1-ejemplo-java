@@ -1,6 +1,6 @@
 package org.unq.objetos.uno.ejemplos.golondrinas;
 
-public class Gorrion extends Ave {
+public class Gorrion extends Ave implements Cazador {
 
     public Gorrion() {
         this.energia = 100;

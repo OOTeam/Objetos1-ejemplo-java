@@ -1,6 +1,6 @@
 package org.unq.objetos.uno.ejemplos.golondrinas;
 
-public class Golondrina extends Ave {
+public class Golondrina extends Ave implements Cazador {
 
 
     public Golondrina() {
@@ -27,6 +27,11 @@ public class Golondrina extends Ave {
     @Override
     protected Integer limiteDeDebilidad() {
         return 50;
+    }
+
+    @Override
+    public void cazar(Ave unAve) {
+
     }
 
 }
