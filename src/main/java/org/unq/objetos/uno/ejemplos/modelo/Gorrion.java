@@ -13,6 +13,7 @@ public class Gorrion extends Ave {
         return energia;
     }
 
+    @Override
     public void comer(Integer unaCantidadDeAlimentoEnGramos) {
         energia += energiaRecuperadaPorComer(unaCantidadDeAlimentoEnGramos);
     }

@@ -15,6 +15,7 @@ public class Golondrina extends Ave {
         return energia;
     }
 
+    @Override
     public void comer(Integer unaCantidadDeGramos) {
         // energia := energia + (unaCantidadDeGramos * 4 "joules").
         energia = energia + energiaRecuperadaPorComer(unaCantidadDeGramos);
