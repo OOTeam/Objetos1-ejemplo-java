@@ -1,16 +1,10 @@
 package org.unq.objetos.uno.ejemplos.modelo;
 
 public class Gorrion extends Ave {
-    private Integer energia = 100;
-    private String ubicacion;
 
     public Gorrion(String unaUbicacion) {
-        this.ubicacion = unaUbicacion;
-    }
-
-    @Override
-    public Integer energia() {
-        return energia;
+        super(unaUbicacion);
+        this.energia = 100;
     }
 
     @Override
@@ -20,10 +14,6 @@ public class Gorrion extends Ave {
 
     private Integer energiaRecuperadaPorComer(Integer unaCantidadDeAlimentoEnGramos) {
         return unaCantidadDeAlimentoEnGramos + unaCantidadDeAlimentoEnGramos * 10;
-    }
-
-    public String ubicacion() {
-        return ubicacion;
     }
 
     @Override

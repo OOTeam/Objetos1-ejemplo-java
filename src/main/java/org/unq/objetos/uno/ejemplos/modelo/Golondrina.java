@@ -2,16 +2,9 @@ package org.unq.objetos.uno.ejemplos.modelo;
 
 public class Golondrina extends Ave {
 
-    private Integer energia = 45;
-    private String ubicacion;
-
     public Golondrina(String unaUbicacion) {
-        this.ubicacion = unaUbicacion;
-    }
-
-    @Override
-    public Integer energia() {
-        return energia;
+        super(unaUbicacion);
+        this.energia  = 45;
     }
 
     @Override
@@ -36,10 +29,6 @@ public class Golondrina extends Ave {
 
     private Integer costoFijoPorVolar() {
         return 10;
-    }
-
-    public String ubicacion() {
-        return ubicacion;
     }
 
     @Override
