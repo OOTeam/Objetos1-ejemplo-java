@@ -2,8 +2,6 @@ package org.unq.objetos.uno.ejemplos.modelo;
 
 public class Golondrina extends Ave {
 
-    // Constante del lado de la clase.
-    private static final int LIMITE_CUANDO_ESTA_DEBIL = 50;
     private Integer energia = 45;
     private String ubicacion;
 
@@ -45,7 +43,7 @@ public class Golondrina extends Ave {
     }
 
     @Override
-    public boolean estaDebil() {
-        return energia < LIMITE_CUANDO_ESTA_DEBIL;
+    protected Integer limiteCuandoEstaDebil() {
+        return 50;
     }
 }

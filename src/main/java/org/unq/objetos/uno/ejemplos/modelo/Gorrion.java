@@ -1,7 +1,6 @@
 package org.unq.objetos.uno.ejemplos.modelo;
 
 public class Gorrion extends Ave {
-    private static final int LIMITE_DE_ENERGIA_CUANDO_ESTA_DEBIL = 100;
     private Integer energia = 100;
     private String ubicacion;
 
@@ -37,7 +36,7 @@ public class Gorrion extends Ave {
     }
 
     @Override
-    public boolean estaDebil() {
-        return energia < LIMITE_DE_ENERGIA_CUANDO_ESTA_DEBIL;
+    protected Integer limiteCuandoEstaDebil() {
+        return 100;
     }
 }
