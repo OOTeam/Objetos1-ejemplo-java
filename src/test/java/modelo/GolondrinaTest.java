@@ -7,6 +7,9 @@ import org.unq.objetos.uno.ejemplos.modelo.Golondrina;
 
 public class GolondrinaTest {
 
+    // ejemplo de un colaborador 'static', es decir, del lado de la clase.
+    // al declararlo como final, no puede ser reasignado, es una constante.
+    private static final int ENERGIA_INICIAL_DE_LAS_GOLONDRINAS = 45;
     private Golondrina pepita;
     private String buenosAires;
 
@@ -20,7 +23,7 @@ public class GolondrinaTest {
 
     @Test
     public void unaGolondrinaNaceCon45JoulesDeEnergia(){
-        Assertions.assertEquals(45, pepita.energia());
+        Assertions.assertEquals(ENERGIA_INICIAL_DE_LAS_GOLONDRINAS, pepita.energia());
         // Assert that: pepita energia isEqualTo: 45 "joules".
     }
 
