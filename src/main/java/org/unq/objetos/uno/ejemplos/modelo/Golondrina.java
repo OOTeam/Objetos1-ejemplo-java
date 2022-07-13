@@ -13,12 +13,7 @@ public class Golondrina extends Ave {
     }
 
     @Override
-    public void volar(Integer unosKilometros) {
-        // energia := energia - (unosKilometros + 10 "joules de costo fijo").
-        energia = energia - energiaDisminuidaPorVolar(unosKilometros);
-    }
-
-    private Integer energiaDisminuidaPorVolar(Integer unosKilometros) {
+    protected Integer energiaDisminuidaPorVolar(Integer unosKilometros) {
         return unosKilometros + costoFijoPorVolar();
     }
 

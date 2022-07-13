@@ -13,11 +13,7 @@ public class Gorrion extends Ave {
     }
 
     @Override
-    public void volar(Integer unosKilometros) {
-        energia = energia - energiaDisminuidaPorVolar(unosKilometros);
-    }
-
-    private Integer energiaDisminuidaPorVolar(Integer unosKilometros) {
+    protected Integer energiaDisminuidaPorVolar(Integer unosKilometros) {
         return unosKilometros * 5;
     }
 
