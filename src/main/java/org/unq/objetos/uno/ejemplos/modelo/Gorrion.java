@@ -9,6 +9,7 @@ public class Gorrion extends Ave {
         this.ubicacion = unaUbicacion;
     }
 
+    @Override
     public Integer energia() {
         return energia;
     }
@@ -35,6 +36,7 @@ public class Gorrion extends Ave {
         return unosKilometros * 5;
     }
 
+    @Override
     public boolean estaDebil() {
         return energia < LIMITE_DE_ENERGIA_CUANDO_ESTA_DEBIL;
     }

@@ -11,6 +11,7 @@ public class Golondrina extends Ave {
         this.ubicacion = unaUbicacion;
     }
 
+    @Override
     public Integer energia() {
         return energia;
     }
@@ -43,6 +44,7 @@ public class Golondrina extends Ave {
         return ubicacion;
     }
 
+    @Override
     public boolean estaDebil() {
         return energia < LIMITE_CUANDO_ESTA_DEBIL;
     }

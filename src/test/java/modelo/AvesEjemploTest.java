@@ -9,6 +9,8 @@ import org.unq.objetos.uno.ejemplos.modelo.Gorrion;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class AvesEjemploTest {
 
@@ -59,11 +61,56 @@ public class AvesEjemploTest {
         // aves := OrderedCollection with: pepita with: pepon.
         List<Ave> aves = List.of(pepita, pepon);
 
-        // { pepon . pepita } do: [:unAve | unAve comer: 10 "gramos" ].
+        // aves do: [:unAve | unAve comer: 10 "gramos" ].
         aves.forEach((ave) -> ave.comer(10));
 
         Assertions.assertThat(pepita.energia()).isEqualTo(85);
         Assertions.assertThat(pepon.energia()).isEqualTo(210);
+    }
+    @Test
+    public void ejemploColeccionesIncludes() {
+        // aves := OrderedCollection with: pepita with: pepon.
+        List<Ave> aves = List.of(pepita, pepon);
+
+        // aves includes: pepita.
+        Assertions.assertThat(aves.contains(pepita)).isTrue();
+        // aves includes: pepon.
+        Assertions.assertThat(aves).contains(pepon);
+    }
+
+    @Test
+    public void ejemploColeccionesFilter() {
+        // aves := OrderedCollection with: pepita with: pepon.
+        List<Ave> aves = List.of(pepita, pepon);
+
+        // aves select: [:unAve | unAve estaDebil ].
+        List<Ave> avesDebiles = aves.stream().filter((ave) -> ave.estaDebil()).collect(Collectors.toList());
+
+        Assertions.assertThat(avesDebiles).containsExactly(pepita);
+    }
+
+    @Test
+    public void ejemploColeccionesSum() {
+        // aves := OrderedCollection with: pepita with: pepon.
+        List<Ave> aves = List.of(pepita, pepon);
+
+        // aves sum: [:unAve | unAve energia ] ifEmpty: [0 "joules"].
+        // (aves collect: [:unAve | unAve energia ]) sum.
+        int energiaTotal = aves.stream().mapToInt(Ave::energia).sum();
+
+        Assertions.assertThat(energiaTotal).isEqualTo(pepita.energia() + pepon.energia());
+    }
+
+    @Test
+    public void ejemploColeccionesDetect() {
+        // aves := OrderedCollection with: pepita with: pepon.
+        List<Ave> aves = List.of(pepita, pepon);
+
+        // aves sum: [:unAve | unAve energia ] ifEmpty: [0 "joules"].
+        // (aves collect: [:unAve | unAve energia ]) sum.
+        Ave unAveDebil = aves.stream().filter(ave -> ave.estaDebil()).findFirst().get();
+
+        Assertions.assertThat(unAveDebil).isEqualTo(pepita);
     }
 
 }
