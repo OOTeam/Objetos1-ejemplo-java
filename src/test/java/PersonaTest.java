@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.unq.objetos.uno.ejemplos.Persona;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,11 +10,21 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class EjemploTest {
+public class PersonaTest {
 
     @BeforeEach
     public void setUp() {
 
+    }
+
+    @Test
+    public void unaPersonaTieneUnNombre(){
+
+        Persona pepe = new Persona("Pepe");
+
+        Assertions.assertEquals("Pepe", pepe.nombre());
+//        Assert that: pepe nombre isEqualTo: 'Pepe'
+//        pepe.nombre() = "Pepe";
     }
 
     @Test
