@@ -11,4 +11,9 @@ public class Golondrina {
         // energia := energia + (unaCantidadDeGramos * 4 "joules").
         energia = energia + (unaCantidadDeGramos * 4);
     }
+
+    public void volar(Integer unosKilometros) {
+        // energia := energia - (unosKilometros + 10 "joules de costo fijo").
+        energia = energia - (unosKilometros + 10);
+    }
 }

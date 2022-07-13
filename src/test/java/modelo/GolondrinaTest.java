@@ -30,6 +30,17 @@ public class GolondrinaTest {
 
         Integer energiaEsperada = 49;
         Assertions.assertEquals(energiaEsperada, pepita.energia());
-        // Assert that: pepita energia isEqualTo: 45 "joules".
+        // Assert that: pepita energia isEqualTo: 49 "joules".
+    }
+
+    @Test
+    public void unaGolondrinaVuelaUnosKilometrosPorLoQueGastaEnergia(){
+        Integer unosKilometros = 1;
+
+        pepita.volar(unosKilometros);
+
+        Integer energiaEsperada = 34;
+        Assertions.assertEquals(energiaEsperada, pepita.energia());
+        // Assert that: pepita energia isEqualTo: 34 "joules".
     }
 }
