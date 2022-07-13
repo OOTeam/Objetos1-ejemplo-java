@@ -2,6 +2,11 @@ package org.unq.objetos.uno.ejemplos.modelo;
 
 public class Gorrion {
     private Integer energia = 100;
+    private String ubicacion;
+
+    public Gorrion(String unaUbicacion) {
+        this.ubicacion = unaUbicacion;
+    }
 
     public Integer energia() {
         return energia;
@@ -13,5 +18,9 @@ public class Gorrion {
 
     private Integer energiaRecuperadaPorComer(Integer unaCantidadDeAlimentoEnGramos) {
         return unaCantidadDeAlimentoEnGramos + unaCantidadDeAlimentoEnGramos * 10;
+    }
+
+    public String ubicacion() {
+        return ubicacion;
     }
 }

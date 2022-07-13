@@ -10,18 +10,24 @@ public class GorrionTest {
 
     private static final Integer ENERGIA_INICIAL_DE_LOS_GORRIONES = 100;
     private Gorrion pepon;
+    private String buenosAires;
 
     @BeforeEach
     void setUp() {
-        pepon = new Gorrion();
+        buenosAires = "BuenosAires";
+        pepon = new Gorrion(buenosAires);
     }
 
     @Test
     public void unGorrionNaceCon100JoulesDeEnergia() {
-        Gorrion pepon = new Gorrion();
-
         Assertions.assertEquals(ENERGIA_INICIAL_DE_LOS_GORRIONES, pepon.energia());
         // Assert that: pepon energia isEqualTo: 100 "joules".
+    }
+
+    @Test
+    public void unGorrionNaceEnUnaUbicacion() {
+        Assertions.assertEquals(buenosAires, pepon.ubicacion());
+        // Assert that: pepon ubicacion isEqualTo: buenosAires.
     }
 
     @Test
