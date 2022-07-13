@@ -1,6 +1,6 @@
 package org.unq.objetos.uno.ejemplos.modelo;
 
-public class Gorrion {
+public class Gorrion extends Ave {
     private static final int LIMITE_DE_ENERGIA_CUANDO_ESTA_DEBIL = 100;
     private Integer energia = 100;
     private String ubicacion;
@@ -25,6 +25,7 @@ public class Gorrion {
         return ubicacion;
     }
 
+    @Override
     public void volar(Integer unosKilometros) {
         energia = energia - energiaDisminuidaPorVolar(unosKilometros);
     }

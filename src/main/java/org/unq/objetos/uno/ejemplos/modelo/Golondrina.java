@@ -1,6 +1,6 @@
 package org.unq.objetos.uno.ejemplos.modelo;
 
-public class Golondrina {
+public class Golondrina extends Ave {
 
     // Constante del lado de la clase.
     private static final int LIMITE_CUANDO_ESTA_DEBIL = 50;
@@ -24,6 +24,7 @@ public class Golondrina {
         return unaCantidadDeGramos * 4;
     }
 
+    @Override
     public void volar(Integer unosKilometros) {
         // energia := energia - (unosKilometros + 10 "joules de costo fijo").
         energia = energia - energiaDisminuidaPorVolar(unosKilometros);
