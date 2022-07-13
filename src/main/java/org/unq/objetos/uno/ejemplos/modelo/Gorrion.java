@@ -1,6 +1,7 @@
 package org.unq.objetos.uno.ejemplos.modelo;
 
 public class Gorrion {
+    private static final int LIMITE_DE_ENERGIA_CUANDO_ESTA_DEBIL = 100;
     private Integer energia = 100;
     private String ubicacion;
 
@@ -30,5 +31,9 @@ public class Gorrion {
 
     private Integer energiaDisminuidaPorVolar(Integer unosKilometros) {
         return unosKilometros * 5;
+    }
+
+    public boolean estaDebil() {
+        return energia < LIMITE_DE_ENERGIA_CUANDO_ESTA_DEBIL;
     }
 }

@@ -51,4 +51,22 @@ public class GorrionTest {
         Assertions.assertEquals(energiaEsperada, pepon.energia());
         // Assert that: pepon energia isEqualTo: 90 "joules".
     }
+
+    @Test
+    public void unGorrionConPocaEnergiaEstaDebil() {
+        pepon.volar(1);
+
+        Assertions.assertTrue(pepon.estaDebil());
+        // Assert isTrue: pepon estaDebil.
+    }
+
+    @Test
+    public void unGorrionConMuchaEnergiaNoEstaDebil() {
+        Integer unaCantidadDeGramos = 100;
+
+        pepon.comer(unaCantidadDeGramos);
+
+        Assertions.assertFalse(pepon.estaDebil());
+        // Assert isFalse: pepon estaDebil.
+    }
 }

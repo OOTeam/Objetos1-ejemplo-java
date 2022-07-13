@@ -65,7 +65,7 @@ public class GolondrinaTest {
     }
 
     @Test
-    public void unaGolondrinaConMuchaEnergiaEstaDebil() {
+    public void unaGolondrinaConMuchaEnergiaNoEstaDebil() {
         Integer unaCantidadDeGramos = 100;
 
         pepita.comer(unaCantidadDeGramos);
